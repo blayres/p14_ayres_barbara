@@ -1,0 +1,81 @@
+body {
+    background-color: #f0f8ff;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    width: 620px;
+}
+
+a {
+    text-decoration-line: none;
+    color: black;
+}
+
+.container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+
+#create-employee {
+    background-color: #fff;
+    border: 1px solid;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    row-gap: 2rem;
+}
+
+.input-address {
+    -webkit-column-gap: 2rem;
+    column-gap: 2rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.address {
+    background-color: #f0f8ff;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.department_submit {
+    display: flex;
+    justify-content: center;
+}
+
+label {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 10px;
+}
+
+input {
+    height: 24px;
+    width: 253px;
+}
+
+#department {
+    position: relative;
+    box-sizing: border-box;
+}
+
+
+.submit {
+    background-color: #f0f8ff;
+    border: 0.5px solid;
+    border-radius: 20px;
+    cursor: pointer;
+    height: 35px;
+    padding: 7px 35px;
+}
