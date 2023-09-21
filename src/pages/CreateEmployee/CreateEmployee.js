@@ -288,7 +288,7 @@ function CreateEmployee({ onEmployeeCreate }) {
       firstName: "",
       lastName: "",
       dateOfBirth: new Date(),
-      startDate: "",
+      startDate: new Date(),
       department: "",
       address: {
         street: "",
@@ -377,7 +377,7 @@ function CreateEmployee({ onEmployeeCreate }) {
                 onChange={(selected) =>
                   setEmployeeData({
                     ...employeeData,
-                    department: selected,
+                    department: selected[0]?.value || "", 
                   })
                 }
               />
