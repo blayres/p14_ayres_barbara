@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Select from "react-dropdown-select";
+import Modal from "react-modal"; // Modal component
 import "../CreateEmployee/CreateEmployee.css";
 import { addEmployee } from "../service/ServiceEmployee";
 
@@ -377,7 +378,7 @@ function CreateEmployee({ onEmployeeCreate }) {
                 onChange={(selected) =>
                   setEmployeeData({
                     ...employeeData,
-                    department: selected[0]?.value || "", 
+                    department: selected[0]?.value || "",
                   })
                 }
               />
@@ -461,7 +462,7 @@ function CreateEmployee({ onEmployeeCreate }) {
             </button>
           </div>
 
-          {isModalOpen && (
+          {/* {isModalOpen && (
             <div className="modal-background">
               <div className="modal">
                 <span className="close" onClick={() => setIsModalOpen(false)}>
@@ -470,7 +471,21 @@ function CreateEmployee({ onEmployeeCreate }) {
                 <p>Employee Created!</p>
               </div>
             </div>
-          )}
+          )} */}
+
+          {/* Use the Modal component */}
+
+          <Modal
+            isOpen={isModalOpen}
+            onRequestClose={() => setIsModalOpen(false)}
+            className="modal"
+            overlayClassName="modal-background"
+          >
+            <span className="close" onClick={() => setIsModalOpen(false)}>
+              &times;
+            </span>
+            <p>Employee Created!</p>
+          </Modal>
         </form>
       </div>
     </div>
