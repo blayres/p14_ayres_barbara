@@ -7,11 +7,9 @@ import EmployeeList from "../src/pages/EmployeeList/EmployeeList";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-// Defina um estado no nível superior para rastrear o novo funcionário
 const RootApp = () => {
   const [newEmployee, setNewEmployee] = useState(null);
 
-  // Esta função será passada para CreateEmployee para receber o novo funcionário
   const handleNewEmployee = (employeeData) => {
     setNewEmployee(employeeData);
   };

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Select from "react-dropdown-select";
-import Modal from "react-modal"; // Modal component
+import Modal from "react-modal-babi";
 import "../CreateEmployee/CreateEmployee.css";
 import { addEmployee } from "../service/ServiceEmployee";
 
@@ -22,7 +22,11 @@ function CreateEmployee({ onEmployeeCreate }) {
     },
   });
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
 
   const optionsDepartment = [
     { value: "sales", label: "Sales" },
@@ -299,7 +303,7 @@ function CreateEmployee({ onEmployeeCreate }) {
       },
     });
 
-    setIsModalOpen(true);
+    setShowModal(true);
   };
 
   return (
@@ -475,17 +479,12 @@ function CreateEmployee({ onEmployeeCreate }) {
 
           {/* Use the Modal component */}
 
-          <Modal
-            isOpen={isModalOpen}
-            onRequestClose={() => setIsModalOpen(false)}
-            className="modal"
-            overlayClassName="modal-background"
-          >
-            <span className="close" onClick={() => setIsModalOpen(false)}>
-              &times;
-            </span>
-            <p>Employee Created!</p>
-          </Modal>
+          <div>
+            <Modal show={showModal} onClickCloseBtn={closeModal}>
+              <h1>Success !</h1>
+              <p>Employee Created</p>
+            </Modal>
+          </div>
         </form>
       </div>
     </div>
